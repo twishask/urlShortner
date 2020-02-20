@@ -18,12 +18,13 @@ function FormForUrl () {
     var body = {
       "longUrl":url
     }
-    axios.post("http://localhost:5000/api/url/shorten", body, {
+    axios.post("http://" + window.location.hostname + ":5000/api/url/shorten", body, {
       headers: {
         'Content-Type': 'application/json',
       },
     }).then(result => {
           console.log(result.data.urlCode);
+          result.data.shortUrl = "http://" + window.location.hostname + ":5000/" + result.data.urlCode;
           setUrl(result.data);
   //        return result.data.urlCode;
     }).catch(err => {
@@ -52,7 +53,7 @@ function FormForUrl () {
   </ListGroup>
   <ListGroup flush>
     <ListGroupItem className="p-3">
-      <a href={url["longUrl"]}>{url["shortUrl"]}</a>
+      <a href={url["shortUrl"]}>{url["shortUrl"]}</a>
     </ListGroupItem>
   </ListGroup>
   </div>
