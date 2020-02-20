@@ -10,11 +10,14 @@
     "shortid": "^2.2.15",
     "valid-url": "^1.0.9"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index",
-    "dev": "nodemon index"
+    "dev": "concurrently \"nodemon index.js\" \"cd client && npm run start\"",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
