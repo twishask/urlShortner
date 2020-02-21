@@ -4,7 +4,7 @@ The objective of this single page application is to provide a short url for the 
 
 It is built using MERN stack technologies(MongoDB, Express, React, Node).
 
-The demo for this project can be found [here](http://35.230.9.42:3000/)
+The demo for this project can be found [here](http://35.227.154.167:3000)
 
 It provides the following functionalities:
 ---------------------
