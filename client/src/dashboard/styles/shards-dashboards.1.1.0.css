@@ -4358,7 +4358,7 @@ a.text-accent:hover, a.text-accent:focus {
     .main-footer {
       display: block !important;
       height: auto;
-      width: 100%; }
+      width: 100% !important; }
       .main-footer .nav {
         width: 100%;
         display: block;

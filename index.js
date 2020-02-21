@@ -15,7 +15,7 @@ client.connect(err => {
   client.close();
 });
 */
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/trialdb', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/urlshortener', { useNewUrlParser: true })
 .then(res=>{
     console.log("Database connected..")
 }).catch(function(e){

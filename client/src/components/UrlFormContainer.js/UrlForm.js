@@ -9,11 +9,12 @@ import {
 } from "shards-react";
 //import shorten from './ShortenedUrl';
 import axios from 'axios';
-
+console.log(window.location.hostname);
 function FormForUrl () {
   const [inputUrl, setInputUrl] = useState('');
   const [url, setUrl] = useState({});
-  
+  const [error, setError] = useState('');
+
   const shorten = (url) => {
     var body = {
       "longUrl":url
@@ -23,12 +24,14 @@ function FormForUrl () {
         'Content-Type': 'application/json',
       },
     }).then(result => {
+          setError('')
           console.log(result.data.urlCode);
           result.data.shortUrl = "http://" + window.location.hostname + ":5000/" + result.data.urlCode;
           setUrl(result.data);
   //        return result.data.urlCode;
     }).catch(err => {
-        console.log("err");
+        console.log(err);
+        setError(err);
     })
     }
     const formSubmit = (e) => {
@@ -53,7 +56,7 @@ function FormForUrl () {
   </ListGroup>
   <ListGroup flush>
     <ListGroupItem className="p-3">
-      <a href={url["shortUrl"]}>{url["shortUrl"]}</a>
+    { error?'Insert a valid Url':<a href={url["shortUrl"]}>{url["shortUrl"]}</a>}
     </ListGroupItem>
   </ListGroup>
   </div>

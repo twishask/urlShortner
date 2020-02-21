@@ -9,7 +9,6 @@ import {
 
 import PageTitle from "../components/common/PageTitle";
 import CompleteForm from "../components/UrlFormContainer.js/UrlForm";
-import ShortenedUrl from "../components/UrlFormContainer.js/ShortenedUrl";
 
 const UrlContainer = () => (
   <div>

@@ -9,7 +9,7 @@ gulp.task('default', ['serve']);
 gulp.task('compile:sass', function () {
   return gulp.src('styles/scss/shards-dashboards.scss')
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(rename({ suffix: '.' + require('./package.json').version}))
+    .pipe(rename({ suffix: '.' + require('./package.json.js').version}))
     .pipe(gulp.dest('./styles'))
     .pipe(cleanCSS())
     .pipe(rename({ suffix: '.min'}))
